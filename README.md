@@ -74,4 +74,8 @@ FOR (i = 0; i < num_xattrs; i++) {
 }
 ~~~
 
+## Other notes
+
+Original repo (git://git.hardeman.nu/metastore.git) has not been accessible on 20131012-13.
+
 [end]
