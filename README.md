@@ -23,37 +23,40 @@
 
 ## Original README content
 
-metastore stores or restores metadata (owner, group, permissions, xattrs
-and optionally mtime) for a filesystem tree.
+metastore stores or restores metadata (owner, group, permissions, xattrs and optionally mtime) for a filesystem tree.
 
 See the manpage (metastore.1) for more details.
 
 The file format of the .metastore files is as follows:
 
-Data types
-----------
+### Data types
 
+~~~
 CSTRING = NULL-terminated binary string
-
 BSTRING(N) = binary string of length N
-
 INT(N) = N byte integer in big endian byte order
+~~~
 
 
-File format
------------
+### File format
+
+~~~
 HEADER
 N * ENTRY
+~~~
 
 
-HEADER format
--------------
+### HEADER format
+
+~~~
 BSTRING(10) - Magic header - "MeTaSt00r3"
 BSTRING(8)  - Version - "\0\0\0\0\0\0\0\0" (currently)
+~~~
 
 
-ENTRY format
-------------
+### ENTRY format
+
+~~~
 CSTRING - Path (absolute or relative)
 CSTRING - Owner (owner name, not uid)
 CSTRING - Group (group name, not gid)
@@ -69,5 +72,6 @@ FOR (i = 0; i < num_xattrs; i++) {
     INT(4)            - xattrlen
     BSTRING(xattrlen) - xattr value
 }
+~~~
 
 [end]
