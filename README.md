@@ -1,4 +1,27 @@
-## Original README
+## BrannerChinese's Notes
+
+  1. Used with `git`, allows user to store file metadata before a commit and then apply it after a pull.
+  1. Compiles straightforwardly using `make` on OS 10.8.5. `./metadata` then returns a concise description of usage:
+
+        Usage: ./metastore ACTION [OPTION...] [PATH...]
+        
+        Where ACTION is one of:
+          -c, --compare	Show differences between stored and real metadata
+          -s, --save	Save current metadata
+          -a, --apply	Apply stored metadata
+          -h, --help	Help message (this text)
+        
+        Valid OPTIONS are:
+          -v, --verbose	Print more verbose messages
+          -q, --quiet	Print less verbose messages
+          -m, --mtime	Also take mtime into account for diff or apply
+          -e, --empty-dirs	Recreate missing empty directories (experimental)
+          -f, --file   <file>	Set metadata file
+
+  1. `example/` contains two sample scripts for use before commits and in place of `git pull`.
+  1. Is there fuller documentation somewhere?
+
+## Original README content
 
 metastore stores or restores metadata (owner, group, permissions, xattrs
 and optionally mtime) for a filesystem tree.
@@ -47,23 +70,4 @@ FOR (i = 0; i < num_xattrs; i++) {
     BSTRING(xattrlen) - xattr value
 }
 
-## BrannerChinese's Notes
-
-  1. Compiles straightforwardly using `make` on OS 10.8.5. `./metadata` then returns a concise description of usage:
-        Usage: ./metastore ACTION [OPTION...] [PATH...]
-        
-        Where ACTION is one of:
-          -c, --compare		Show differences between stored and real metadata
-          -s, --save		Save current metadata
-          -a, --apply		Apply stored metadata
-          -h, --help		Help message (this text)
-        
-        Valid OPTIONS are:
-          -v, --verbose		Print more verbose messages
-          -q, --quiet		Print less verbose messages
-          -m, --mtime		Also take mtime into account for diff or apply
-          -e, --empty-dirs	Recreate missing empty directories (experimental)
-          -f, --file   <file>	Set metadata file
-
-  1. `example/` contains two sample scripts for use before commits and in place of `git pull`.
-  1. Is there fuller documentation somewhere.
+[end]
