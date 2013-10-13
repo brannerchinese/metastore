@@ -1,6 +1,6 @@
 ## Usage Notes
 
-  1. Used with `git`, allows user to store file metadata before a commit and then apply it after a pull. Without such a tool, `git` simply overwrites file metadata, which the user may which to retain.
+  1. Used with `git`, allows user to store file metadata before a commit and then apply it after a pull. Without such a tool, `git` simply overwrites file metadata, which the user may wish to retain.
   1. Compiles straightforwardly using `make` on OS 10.8.5. `./metadata` then returns a concise description of usage:
 
         Usage: ./metastore ACTION [OPTION...] [PATH...]
